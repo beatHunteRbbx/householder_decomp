@@ -23,7 +23,7 @@ public class Main {
         Double[][] tempMatrix = matrix.clone();
         Double[][] answerMatrix = new Double[matrix.length][matrix[0].length];
         for (int i = 0; i < 1000; i++) {
-            Double[][] A = doHauseholderDecomp(tempMatrix);
+            Double[][] A = doHouseholderDecomp(tempMatrix);
             //вычисляем разность между диагональными элементами прошлой матрицы и текущей матрицы
             Double[][] deltaMatrix = subtractMatrices(tempMatrix, A);
 
@@ -60,7 +60,7 @@ public class Main {
         }
     }
 
-    private static Double[][] doHauseholderDecomp(Double[][] matrix) {
+    private static Double[][] doHouseholderDecomp(Double[][] matrix) {
         //----------------Шаг 1: обнуляются элементы 1ого стобца под диагональным элементом а11-------------------------
         Double[][] vector = new Double[matrix.length][1];
         double sum = 0;
